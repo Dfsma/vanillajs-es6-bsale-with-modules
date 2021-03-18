@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>BSALE ECOMMERCE</title>
+  <link rel="stylesheet" type="text/css" href="styles/style.css" />
+  <link rel="stylesheet" type="text/css" href="styles/style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="navbar sticky-top navbar-dark bg-dark box-shadow">
+    <div class="container d-flex justify-content-between">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <svg background-color="red" height="30" viewBox="0 0 340 284" width="30" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="m53.4228 8.25149c3.0722-5.1192 8.6059-8.25149 14.5773-8.25149h203.9999c5.971 0 11.505 3.13229 14.577 8.25149l51 84.97851c3.834 6.3873 3.06 14.526-1.908 20.077l-144.5 161.459c-.171.191-.347.379-.526.562-2.691 2.746-5.903 4.927-9.447 6.416-3.545 1.489-7.351 2.256-11.196 2.256s-7.651-.767-11.196-2.256c-3.544-1.489-6.756-3.67-9.447-6.416-.179-.183-.355-.371-.526-.562l-144.49991-161.459c-4.968061-5.551-5.74161-13.6897-1.90828-20.077zm24.2025 25.73991-39.6012 65.9856 131.9759 147.465 131.976-147.465-39.601-65.9856z" />
+          <path
+            d="m120.946 67.4141c8.051 4.8086 10.662 15.2034 5.831 23.2176l-3.699 6.1384 25.501 27.9239c6.315 6.916 5.803 17.618-1.144 23.905s-17.698 5.777-24.014-1.138l-33.9998-37.23c-5.0453-5.525-5.8573-13.6877-1.9984-20.0899l10.2-16.9226c4.8302-8.0142 15.2732-10.6129 23.3232-5.8044z" />
+        </svg>
+        <strong style="padding-left: 20px;">Rails + Vanilla JS</strong>
+      </a>
+      <div class="row">
+        <div class="col">
+
+          <button type="button" class="btn btn-outline-info mb-2 mt-1" data-toggle="modal" data-target="#cart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart2 pb-1"
+              viewBox="0 0 16 16">
+              <path
+                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+            </svg>
+            <span id="total-count" class="total-count badge badge-warning ml-2"></span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="form-group pb-3 mt-3">
+      <h4>Filtra por categoria:</h4>
+
+      <select id="categoryDropDown" class="form-control" data-role="select-dropdown">
+        <option value="" disabled selected>Seleccione una categoria...</option>
+      </select>
+
+      
+    </div>
+    <div id="cards" class="row">
+
+    </div>
+  </div>
+
+
+
+
+
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Back to top</a>
+      </p>
+      <p>Made by <a href="https://github.com/Dfsma">Diego</a> </p>
+    </div>
+  </footer>
+  </div>
+
+
+  <template id="template-card">
+    <div class="col-md-3 mb-2 d-flex">
+      <div class="card">
+        <img src="" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 id="tituloProducto">Titulo</h5>
+          <div class="d-flex flex-fill justify-content-center">
+            <b>$</b>
+            <p>precio</p>
+          </div>
+
+          <p class="descuentoText">Descuento?</p>
+          <p id="discount">descuento</p>
+          <i class="fas fa-cart-plus fa-2x" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </template>
+
+
+
+  <script src="./src/components/product.js" type="module"></script>
+</body>
+
+</html>
