@@ -2,6 +2,7 @@
 import { fetchCategories, fetchProductsByCategory } from '../modules/categoryModule.js'
 import { displayCard } from '../components/product.js'
 import { clear } from '../components/clearData.js'
+import { showSpinner, hideSpinner } from './loader.js';
 
 const categoriesDropDown = document.getElementById("categoryDropDown");
 
@@ -34,9 +35,13 @@ const displayCategories = (data) => {
 }
 
 const displayProductsByCategory = (option) => {
+    showSpinner();
     fetchProductsByCategory(option).then((data) => {
         clear();
-        displayCard(data);
+        if (data) {
+            displayCard(data);
+        }
+        hideSpinner();
     })
 }
 

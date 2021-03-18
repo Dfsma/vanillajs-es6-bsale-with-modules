@@ -30,8 +30,22 @@ const fetchProductsBySearchParam = async (query) => {
   }
 }
 
+const fetchProductsByPagination = async (page) => {
+  try {
+    const response = await fetch(productsUrl + `page` + `/${page}`);
+    const data = await response.json();
 
-export { fetchProducts, fetchProductsBySearchParam };
+    if(data){
+      return data;
+    }
+    
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+export { fetchProducts, fetchProductsBySearchParam, fetchProductsByPagination };
 
 
 
