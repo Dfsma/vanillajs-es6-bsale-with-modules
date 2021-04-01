@@ -36,7 +36,7 @@ searchInput.addEventListener("change", (e) => {
     displayProductsBySearchParam(query);
 });
 
-const displayProducts = (data) => {
+const displayProducts = () => {
     showSpinner();
     fetchProducts().then( (data) => {
         if(data){

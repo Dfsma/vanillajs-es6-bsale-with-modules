@@ -9,22 +9,18 @@ const categoriesDropDown = document.getElementById("categoryDropDown");
 
 categoriesDropDown.addEventListener("change", (e) => {
     displayProductsByCategory(e.target.value);
-  });
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    displayCategories();
-
-
-
 });
 
-const displayCategories = (data) => {
+document.addEventListener("DOMContentLoaded", () => {
+    displayCategories();
+});
+
+const displayCategories = () => {
     fetchCategories().then((data) => {
         const html = data.data
             .map((categoria) => {
                 return `
-            <option id="category" value="${categoria.id}">${categoria.name}</option>
+                    <option id="category" value="${categoria.id}">${categoria.name}</option>
         `;
             })
             .join("");
